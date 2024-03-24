@@ -1,0 +1,209 @@
+listen_ip: 0.0.0.0
+listen_port: 8080
+
+# Routes to be processed. For full information of each
+# route, see: https://platform.openai.com/docs/api-reference/completions/object
+#
+# Add your own customized routes as-needed. Anything wrapped in {...} will be
+# pattern matched and passed as a parameter to the endpoint.
+routes:
+#    - route: /v1/audio/speech
+#      host: http://localhost:5000
+#      endpoint: /v1/audio/speech
+#      methods: POST
+#    - route: /v1/audio/transcriptions
+#      host: http://localhost:5000
+#      endpoint: /v1/audio/transcriptions
+#      methods: POST
+#    - /v1/audio/translations
+#      host: http://localhost:5000
+#      endpoint: /v1/audio/translations
+#      methods: POST
+    - route: /v1/chat/completions
+      host: http://localhost:5000
+      endpoint: /v1/chat/completions
+      methods: POST
+    - route: /v1/embeddings
+      host: http://localhost:5000
+      endpoint: /v1/embeddings
+      methods: POST
+#    - route: /v1/fine_tuning/jobs
+#      host: http://localhost:5000
+#      endpoint: /v1/fine_tuning/jobs
+#      methods: POST
+#    - route: /v1/fine_tuning/jobs
+#      host: http://localhost:5000
+#      endpoint: /v1/fine_tuning/jobs
+#      methods: GET
+#    - route: /v1/fine_tuning/jobs/{fine_tuning_job_id}/events
+#      host: http://localhost:5000
+#      endpoint: /v1/fine_tuning/jobs/{fine_tuning_job_id}/events
+#      methods: GET
+#    - route: /v1/fine_tuning/v1/fine_tuning/jobs/{fine_tuning_job_id}
+#      host: http://localhost:5000
+#      endpoint: /v1/fine_tuning/jobs/{fine_tuning_job_id}
+#      methods: GET
+#    - route: /v1/fine_tuning/jobs/{fine_tuning_job_id}/cancel
+#      host: http://localhost:5000
+#      endpoint: /v1/fine_tuning/jobs/{fine_tuning_job_id}/cancel
+#      methods: POST
+#    - route: /v1/files
+#      host: http://localhost:5000
+#      endpoint: /v1/files
+#      methods: POST
+#    - route: /v1/files
+#      host: http://localhost:5000
+#      endpoint: /v1/files
+#      methods: GET
+#    - route: /v1/files/{file_id}
+#      host: http://localhost:5000
+#      endpoint: /v1/files/{file_id}
+#      methods: GET
+#    - route: /v1/files/{file_id}
+#      host: http://localhost:5000
+#      endpoint: /v1/files/{file_id}
+#      methods: DELETE
+#    - route: /v1/files/{file_id}/content
+#      host: http://localhost:5000
+#      endpoint: /v1/files/{file_id}/content
+#      methods: GET
+    - route: /v1/images/generations
+      host: http://localhost:7860
+      endpoint: /v1/images/generations
+      methods: POST
+#    - route: /v1/images/edits
+#      host: http://localhost:7860
+#      endpoint: /v1/images/edits
+#      methods: POST
+#    - route: /v1/images/variations
+#      host: http://localhost:7860
+#      endpoint: /v1/images/variations
+#      methods: POST
+    - route: /v1/models
+      host: http://localhost:5000
+      endpoint: /v1/models
+      methods: GET
+    - roles: /v1/models/{model}
+      host: http://localhost:5000
+      endpoint: /v1/models/{model}
+      methods: GET
+    - route: /v1/models/{model}
+      host: http://localhost:5000
+      endpoint: /v1/models/{model}
+      methods: DELETE
+#    - route: /v1/moderations
+#      host: http://localhost:5000
+#      endpoint: /v1/moderations
+#      methods: POST
+#    - route: /v1/assistants
+#      host: http://localhost:5000
+#      endpoint: /v1/assistants
+#      methods: POST
+#    - route: /v1/assistants/{assistant_id}/files
+#      host: http://localhost:5000
+#      endpoint: /v1/assistants/{assistant_id}/files
+#      methods: POST
+#    - route: /v1/assistants
+#      host: http://localhost:5000
+#      endpoint: /v1/assistants
+#      methods: GET
+#    - route: /v1/assistants/{assistant_id}/files
+#      host: http://localhost:5000
+#      endpoint: /v1/assistants/{assistant_id}/files
+#      methods: GET
+#    - route: /v1/assistants/{assistant_id}
+#      host: http://localhost:5000
+#      endpoint: /v1/assistants/{assistant_id}
+#      methods: GET
+#    - route: /v1/assistants/{assistant_id}/files/{file_id}
+#      host: http://localhost:5000
+#      endpoint: /v1/assistants/{assistant_id}/files/{file_id}
+#      methods: GET
+#    - route: /v1/assistants/{assistant_id}
+#      host: http://localhost:5000
+#      endpoint: /v1/assistants/{assistant_id}
+#      methods: POST
+#    - route: /v1/assistants/{assistant_id}
+#      host: http://localhost:5000
+#      endpoint: /v1/assistants/{assistant_id}
+#      methods: DELETE
+#    - route: /v1/assistants/{assistant_id}/files/{file_id}
+#      host: http://localhost:5000
+#      endpoint: /v1/assistants/{assistant_id}/files/{file_id}
+#      methods: DELETE
+#    - route: /v1/threads
+#      host: http://localhost:5000
+#      endpoint: /v1/threads
+#      methods: POST
+#    - route: /v1/threads
+#      host: http://localhost:5000
+#      endpoint: /v1/threads
+#      methods: GET
+#    - route: /v1/threads/{thread_id}
+#      host: http://localhost:5000
+#      endpoint: /v1/threads/{thread_id}
+#      methods: POST
+#    - route: /v1/threads/{thread_id}
+#      host: http://localhost:5000
+#      endpoint: /v1/threads/{thread_id}
+#      methods: DELETE
+#    - route: /v1/threads/{thread_id}/messages
+#      host: http://localhost:5000
+#      endpoint: /v1/threads/{thread_id}/messages
+#      methods: POST
+#    - route: /v1/threads/{thread_id}/messages
+#      host: http://localhost:5000
+#      endpoint: /v1/threads/{thread_id}/messages
+#      methods: GET
+#    - route: /v1/threads/{thread_id}/messages/{message_id}/files
+#      host: http://localhost:5000
+#      endpoint: /v1/threads/{thread_id}/messages/{message_id}/files
+#      methods: GET
+#    - route: /v1/threads/{thread_id}/messages/{message_id}
+#      host: http://localhost:5000
+#      endpoint: /v1/threads/{thread_id}/messages/{message_id}
+#      methods: GET
+#    - route: /v1/threads/{thread_id}/messages/{message_id}/files/{file_id}
+#      host: http://localhost:5000
+#      endpoint: /v1/threads/{thread_id}/messages/{message_id}/files/{file_id}
+#      methods: GET
+#    - route: /v1/threads/{thread_id}/messages/{message_id}
+#      host: http://localhost:5000
+#      endpoint: /v1/threads/{thread_id}/messages/{message_id}
+#      methods: POST
+#    - route: /v1/threads/{thread_id}/runs
+#      host: http://localhost:5000
+#      endpoint: /v1/threads/{thread_id}/runs
+#      methods: POST
+#    - route: /v1/threads/runs
+#      host: http://localhost:5000
+#      endpoint: /v1/threads/runs
+#      methods: POST
+#    - route: /v1/threads/{thread_id}/runs
+#      host: http://localhost:5000
+#      endpoint: /v1/threads/{thread_id}/runs
+#      methods: GET
+#    - route: /v1/threads/{thread_id}/runs/{run_id}/steps
+#      host: http://localhost:5000
+#      endpoint: /v1/threads/{thread_id}/runs/{run_id}/steps
+#      methods: GET
+#    - route: /v1/threads/{thread_id}/runs/{run_id}
+#      host: http://localhost:5000
+#      endpoint: /v1/threads/{thread_id}/runs/{run_id}
+#      methods: GET
+#    - route: /v1/threads/{thread_id}/runs/{run_id}/steps/{step_id}
+#      host: http://localhost:5000
+#      endpoint: /v1/threads/{thread_id}/runs/{run_id}/steps/{step_id}
+#      methods: GET
+#    - route: /v1/threads/{thread_id}/runs/{run_id}
+#      host: http://localhost:5000
+#      endpoint: /v1/threads/{thread_id}/runs/{run_id}
+#      methods: POST
+#    - route: /v1/threads/{thread_id}/runs/{run_id}/submit_tool_outputs
+#      host: http://localhost:5000
+#      endpoint: /v1/threads/{thread_id}/runs/{run_id}/submit_tool_outputs
+#      methods: POST
+#    - route: /v1/threads/{thread_id}/runs/{run_id}/cancel
+#      host: http://localhost:5000
+#      endpoint: /v1/threads/{thread_id}/runs/{run_id}/cancel
+#      methods: POST
